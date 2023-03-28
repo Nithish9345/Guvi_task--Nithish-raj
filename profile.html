@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <style>
+      body{
+    background-image: url("images/2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    }
+      .error {
+        color: red;
+      }
+    </style>
+
+    <title>User Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='css/profile1.css'>
+    
+  </head>
+  
+  <body>
+
+
+    <div class="container">
+        <h1>User Profile</h1>
+        <form id="profile-form" method="post">
+          <label for="Name">Name:</label>
+          <input type="text" id="username" name="username" value="" readonly>
+      
+          <label for="Email">Email:</label>
+          <input type="email" id="Email" name="email" value="<?php echo $user_data['Email']; ?>" readonly>
+      
+          <div class="gender-box">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" >
+              <option value="">Select gender</option>
+              <option value="male"<?php if($user_data['gender'] === 'male') { echo ' selected'; } ?>>Male</option>
+              <option value="female"<?php if($user_data['gender'] === 'female') { echo ' selected'; } ?>>Female</option>
+              <option value="other"<?php if($user_data['gender'] === 'other') { echo ' selected'; } ?>>Other</option>
+            </select>
+          </div>
+      
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" value="<?php echo $user_data['phone']; ?>" >
+      
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" value="<?php echo $user_data['addr']; ?>" >
+      
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" value="<?php echo $user_data['dob']; ?>" >
+      
+          <button type="submit" id="submit-btn">Save Changes</button>
+        </form>
+      </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+</script>
+<script>
+  var editBtn = document.getElementById("edit-btn");
+  var inputs = document.getElementsByTagName("input");
+  var selects = document.getElementsByTagName("select");
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </body>
+</html>
